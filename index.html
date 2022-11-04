@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <title>Gia Báo Đời Chấm exe</title>
+    <style>
+        body
+        {
+        background: black;    
+        }
+
+        .none
+        {
+            color: red;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .txt_padding
+        {
+            padding-right: 30px;
+        }
+
+        .pad
+        {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .button
+        {
+            display: inline-block;
+            background: blue;
+            font-size: 25px;
+            color: black;
+        }
+
+        .bot
+        {
+            color: red;
+            background: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="none">
+        <h1>Nhập câu trả lời</h1>
+    </div>
+    <div class="none">
+        <form action="#" method="get" onsubmit="return validate()"></form>
+        <input type="text" class="txt_padding" placeholder="Nơi Gia Báo Đời nhập cmt">
+        <button class="reply">Gửi</button>
+    </div>
+    <div class="none pad">
+        <h4><a href="./garden.html">chơi trò chơi để khiến dòng họ Gia Bao tự hào (ấn vào đây)</a> </h4>
+    </div>
+    <div class="none pad">
+        <h3>ấn start để helicopter bãi rác</h3>
+    </div>
+    <div class="none pad">
+        <img src="./public/img/314130549_602497491561714_3414317631575335702_n.jpg" alt="" class="pinwheel play">
+
+
+    <button class="btn-start">Start</button> 
+    <button class="btn-stop">Stop</button>
+    </div>
+
+    <div class="bot">
+        trang web này làm ra để biến <a href="https://www.facebook.com/groups/417397903133274/user/100054044046049/">Gia Bao</a> thành trò cười của tao , không có ý xuyên tạc lịch sử hiện đại hay tổ chức nào
+    </div>
+
+    <script>
+        const cmt = document.querySelector('.reply');
+
+        cmt.addEventListener('click', function () {
+            
+      alert("Dòng họ của bạn không đủ quyền con người để gửi câu trả lời");
+           
+});
+        
+
+        const pinwheel = document.querySelector('.pinwheel');
+const btnStart = document.querySelector('.btn-start');
+const btnStop = document.querySelector('.btn-stop');
+let angle = 0;
+let rotatePinwheel;
+
+btnStart.addEventListener('click', function () {
+    rotatePinwheel = setTimeout(function rotate() {
+        pinwheel.style.transform = `rotate(${angle}deg)`;
+        angle += 5;
+
+        rotatePinwheel = setTimeout(rotate, 5);
+    }, 50);
+    
+    btnStart.style.display = 'none';
+    btnStop.style.display = 'unset';
+});
+
+btnStop.addEventListener('click', function () {
+    clearTimeout(rotatePinwheel);
+    
+    btnStart.style.display = 'unset';
+    btnStop.style.display = 'none';
+});
+    </script>
+</body>
+</html>
